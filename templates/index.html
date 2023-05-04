@@ -1,0 +1,49 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+	<div id="blur">
+	<section id="main">
+		<nav>
+			<div class="logo">
+				<a href="#">Computer Vision</a>
+			</div>
+			<!-- Navigation -->
+			<ul class="menu">
+				<li><a href="#">Hello</a></li>
+				<li><a href="#">Hola</a></li>
+				<li><a href="#">Hallo</a></li>
+			</ul>
+		</nav>
+		<video src="{% static '1.mp4' %}" muted autoplay loop></video>
+		<div class="main-text" >
+			<h2>Let's draw....</h2>
+			<h1>..... In Virtuality</h1>
+			<p>This demo shows a video background with no overlay.</p>
+			<button class="my-button" onclick="toggle()">Let's Roll!!!!</button>
+
+			<button class="my-button" onclick="location.href='{%url 'new_page_view' %}'">Our member</button>
+		</div>
+	</div>
+	</section>
+	<div id="popup">
+        <h2>Hello!!!</h2>
+        <p>Try this project!!!!!!!!!</p>
+        <button class="my-button" onclick="location.href='{%url 'mouse' %}'">Virtual Mouse</button>
+		<button class="my-button" onclick="location.href='{%url 'script' %}'">Virtual Canvas</button>
+		<button class="my-button" onclick="toggle()">Close</button>
+    </div>
+	<script>
+		function toggle(){
+			var blur = document.getElementById('blur');
+			blur.classList.toggle('active');
+			var popup = document.getElementById('popup');
+			popup.classList.toggle('active');
+		}
+	</script>
+</body>
+</html>

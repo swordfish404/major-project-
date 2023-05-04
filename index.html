@@ -1,0 +1,43 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+	<section id="main">
+		<nav>
+			<div class="logo">
+				<a href="#">Computer Vision</a>
+			</div>
+			<!-- Navigation -->
+			<ul class="menu" >
+				<li><a href="#">Hello</a></li>
+				<li><a href="#">Hola</a></li>
+				<li><a href="#">Hallo</a></li>
+			</ul>
+		</nav>
+		<video src="{% static '1.mp4' %}" muted autoplay loop></video>
+		<div class="main-text" id="blur">
+			<h2>Let's draw....</h2>
+			<h1>..... In Virtuality</h1>
+			<p>This demo shows a video background with no overlay.</p>
+			<a href="#" onclick="toggle(popup)">Let's Roll!!!!</a>
+		</div>
+	</section>
+	<div id="popup">
+        <a href="#" onclick="location.href='{%url 'script' %}'">Canvas</a>
+		
+        <a href="#" onclick="toggle()">Close</a>
+    </div>
+	<script>
+		function toggle(){
+			var blur = document.getElementById('blur');
+			blur.classList.toggle('active');
+			var popup = document.getElementById('popup');
+			popup.classList.toggle('active');
+		}
+	</script>
+</body>
+</html>
