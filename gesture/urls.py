@@ -23,7 +23,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.button),
-    path('output', views.output, name="script"),
+    path('canvas', views.canvas, name="canvas"),
     path('mouse', views.mouse, name="mouse"),
-    path('new_page_view/', views.new_page_view, name='new_page_view')
+    path('memberpage/', views.new_page_view, name='member_page')
 ]

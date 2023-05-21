@@ -1,9 +1,12 @@
-from django.shortcuts import render,HttpResponse
-import requests
+from django.shortcuts import render,HttpResponse # render & HTTP response are functions used for http response
+import requests # this line will imort request module which are used to generate HTTP request to other website
 
 def button(request):
+# button is a view function which takes request as input. 
+# IN Django a view function is used for processing an incoming http request and returning a Http response
+
     return render (request,'index.html')
-def output(request):
+def canvas(request):
     # All the imports go here
     import cv2
     import numpy as np
@@ -175,8 +178,21 @@ def output(request):
             break
 
     # release the webcam and destroy all active windows
-    cap.release()
     cv2.destroyAllWindows()
+    cap.release()
+
+
+####----------------------------------------------------Virtual Canvas Code ends here--------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 
 
